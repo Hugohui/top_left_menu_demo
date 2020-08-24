@@ -5,12 +5,12 @@
       class="el-menu-vertical-demo"
       router
     >
-      <el-menu-item v-for="route in leftRoutes" :key="route.name" :index="route.path">
-        <i class="el-icon-menu"></i>
-        <span slot="title">
-          {{ route.meta.title }}
-        </span>
-      </el-menu-item>
+      <sidebar-item
+        v-for="route in leftRoutes"
+        :key="route.name"
+        :item="route"
+        :base-path="route.meta.topPath"
+      />
     </el-menu>
   </div>
 </template>
@@ -19,9 +19,13 @@
 import { routes } from '../../../router'
 
 import { Component, Vue, Watch } from 'vue-property-decorator'
+import SidebarItem from '@/layout/components/SideBar/SidebarItem.vue'
 
 @Component({
-  name: 'SideBar'
+  name: 'SideBar',
+  components: {
+    SidebarItem
+  }
 })
 export default class SideBar extends Vue {
   private route: any = []
@@ -39,8 +43,9 @@ export default class SideBar extends Vue {
   }
 
   get activLeftMenu(): string {
-    console.log(this.leftRoutes[0].path)
-    return this.leftRoutes[0].path
+    const route = this.$route
+    const { path } = route
+    return path
   }
 }
 </script>

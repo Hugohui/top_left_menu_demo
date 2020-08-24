@@ -42,6 +42,7 @@ export const routes: RouteConfig[] = [
         name: 'agent_list',
         component: AgentList,
         meta: {
+          icon: 'el-icon-menu',
           title: '代购员列表',
           topPath: 'agent'
         }
@@ -64,6 +65,7 @@ export const routes: RouteConfig[] = [
         name: 'goods_release',
         component: GoodsRelease,
         meta: {
+          icon: 'el-icon-menu',
           title: '发布商品',
           topPath: 'goods'
         }
@@ -73,6 +75,7 @@ export const routes: RouteConfig[] = [
         name: 'goods_list',
         component: GoodsList,
         meta: {
+          icon: 'el-icon-menu',
           title: '商品列表',
           topPath: 'goods'
         }
@@ -95,6 +98,7 @@ export const routes: RouteConfig[] = [
         name: 'order_agent_list',
         component: OrderAgentList,
         meta: {
+          icon: 'el-icon-menu',
           title: '代购订单',
           topPath: 'order'
         }
