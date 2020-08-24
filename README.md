@@ -1,5 +1,4 @@
 # agent-shopping-system
-![avatar](https://github.com/Hugohui/vue_typescript_element/tree/master/src/assets/images/logo.png)
 
 ## Project setup
 ```
