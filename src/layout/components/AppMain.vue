@@ -1,6 +1,5 @@
 <template>
-  <div>
-    This is AppMain.
+  <div class="main-container">
     <router-view></router-view>
   </div>
 </template>
@@ -16,6 +15,9 @@ export default class AppMain extends Vue {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.main-container {
+  padding: 10px;
+  box-sizing: border-box;
+}
 </style>

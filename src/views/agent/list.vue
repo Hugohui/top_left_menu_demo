@@ -1,6 +1,6 @@
 <template>
   <div class="contanier">
-    This is home page.
+    This is Agent page.
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component({
-  name: 'Home'
+  name: 'Agent'
 })
 export default class Home extends Vue {
 
