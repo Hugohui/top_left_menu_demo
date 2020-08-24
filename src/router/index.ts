@@ -33,17 +33,39 @@ export const routes: RouteConfig[] = [
     name: 'agent',
     component: () => import('@/layout/index.vue'),
     meta: {
-      title: '代购员管理'
+      title: '管理'
     },
-    redirect: '/agent/list',
+    redirect: '/agent/list1/list-1',
     children: [
       {
-        path: 'list',
+        path: 'list1',
         name: 'agent_list',
         component: AgentList,
         meta: {
           icon: 'el-icon-menu',
-          title: '代购员列表',
+          title: '列表',
+          topPath: 'agent'
+        },
+        children: [
+          {
+            path: 'list-1',
+            name: 'agent_list-1',
+            component: AgentList,
+            meta: {
+              icon: 'el-icon-menu-1',
+              title: '列表-1',
+              topPath: 'agent'
+            }
+          }
+        ]
+      },
+      {
+        path: 'list2',
+        name: 'agent_list2',
+        component: AgentList,
+        meta: {
+          icon: 'el-icon-menu',
+          title: '列表2',
           topPath: 'agent'
         }
       }
