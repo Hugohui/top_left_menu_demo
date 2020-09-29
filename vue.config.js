@@ -12,8 +12,7 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'scss',
       patterns: [
-        '/Users/admin/workspace/project/h5-program/vue/agent-shopping-system/src/assets/styles/_variables.scss',
-        '/Users/admin/workspace/project/h5-program/vue/agent-shopping-system/src/assets/styles/_mixins.scss'
+        path.resolve(__dirname, './src/assets/styles/*.scss')    //新拉取代码需要执行 vue add style-resources-loader
       ]
     }
   }
