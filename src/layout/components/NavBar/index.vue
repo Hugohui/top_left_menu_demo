@@ -15,12 +15,17 @@
 
 <script lang="ts">
 import { routes } from '../../../router'
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 
 @Component({
   name: 'NavBar'
 })
 export default class NavBar extends Vue {
+  @Watch('$route', {immediate: true})
+  private watchRouter(value: any) {
+    sessionStorage.setItem('current_top_menu', `/${value.meta.topPath}`)
+  }
+
   get routes(): any {
     return routes.filter( (route) => {
       return !route.meta.hidden
@@ -28,7 +33,8 @@ export default class NavBar extends Vue {
   }
 
   get activeTopMenu(): string {
-    return this.routes[0].path
+    let current_top_menu = sessionStorage.getItem('current_top_menu')
+    return current_top_menu || this.routes[0].path
   }
 
 }
